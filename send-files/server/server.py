@@ -15,28 +15,16 @@ while True:
 
     # Trae el mensaje desde el cliente que se conecta al puerto
 
-    #message = socket.recv_json()
-    #message = json.loads(socket.recv())
-    # recibir mensaje multipart
     message = socket.recv_multipart()
-    #print("Received request: %s" % message)
     print("Received request:")
 
     file_info = message[0]
     file_name = message[1].decode()
 
     file = open(file_name, 'wb')
-    file.write(file_info)
 
+    file.write(file_info)
     file.close()
 
-    #  Hacer alguna tarea o proceso
-    # time.sleep(1)
-
-    #result = str(task(message))
-
-    #  Enviá respuesta al cliente con el mensaje "World"
-
-
-    socket.send('Se recivio el archivo corectamente'.encode())
-    print("Request completd")
+socket.send('Se recivio el archivo corectamente'.encode())
+print("Request completd")

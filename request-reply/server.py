@@ -25,7 +25,7 @@ while True:
     #  Hacer alguna tarea o proceso
     # time.sleep(1)
 
-    def multi(info):
+    def task(info):
         ope = info[0]
         if ope == '+':
             resp = info[1] + info[2]
@@ -47,7 +47,7 @@ while True:
             resp = 'Error de operacion'
             return resp
 
-    result = str(multi(message))
+    result = str(task(message))
 
     #  Enviá respuesta al cliente con el mensaje "World"
     socket.send_string(result)

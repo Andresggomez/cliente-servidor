@@ -15,12 +15,11 @@ socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 
 #  Do 10 requests, waiting each time for a response
-
-lista = ['+', 4, 7]
+list = ['+', 4, 7]
 
 print("Sending request")
 #socket.send_string(json.dumps(lista))
-socket.send_json(lista)
+socket.send_json(list)
 #  Get the reply.
 message = socket.recv()
 print("Received reply [ %s ]" % message)
